@@ -3,7 +3,7 @@ import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 import { log } from 'console';
 
-const apiUrl = 'https://domesticservicesbackend-production-acb6.up.railway.app/';
+const apiUrl = 'https://domesticservicesbackend-production-acb6.up.railway.app';
 //const apiUrl = 'http://localhost:3001';
 const httpClient = fetchUtils.fetchJson;
 
