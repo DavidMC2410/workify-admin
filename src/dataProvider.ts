@@ -3,8 +3,8 @@ import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 import { log } from 'console';
 
-const apiUrl = 'https://domesticservicesbackend-production-acb6.up.railway.app';
-//const apiUrl = 'http://localhost:3001';
+//const apiUrl = 'https://domesticservicesbackend-production-acb6.up.railway.app';
+const apiUrl = 'http://localhost:3001';
 const httpClient = fetchUtils.fetchJson;
 
 export const dataProvider = {
@@ -12,15 +12,17 @@ export const dataProvider = {
     console.log('estoy en getProvider y este es el valor de resorce: ',resource);
     
     
-    const { nameService } = params.filter || {};
+    const { nameService, email } = params.filter || {};
     let url =``;
     
     if (resource==='payment'){console.log(1);
     ;url=`${apiUrl}/${resource}/admin/dataPays`}
-    else if (nameService===undefined){console.log(2);
+    else if (nameService===undefined && email===undefined){console.log(2);
      ;url=`${apiUrl}/${resource}`}
-    else {console.log(3);
+    else if (nameService!==undefined){console.log(3);
     ;url=`${apiUrl}/${resource}/name?name=${nameService}` }
+    else {console.log(4);
+    ;url=`${apiUrl}/${resource}/email?email=${email}`}
     
     console.log('esta es la url: ',url);
     return httpClient(url).then(({ headers, json }) => {console.log('aqui va el json',json);
