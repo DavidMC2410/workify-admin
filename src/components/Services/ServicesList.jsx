@@ -16,12 +16,9 @@ export const ServicesList = (props) => {
       <Datagrid bulkActionButtons={false}>
         <TextField source="id" label='ID' />
         <TextField source="nameService" label='Name'/>
-        <TextField source="location" label='Location'/>
         <TextField source="description" label='Description'/>
         <TextField source="pricePerHour" label='Price per Hour'/>
         <TextField source="typeService" label='Ty of Service'/>
-        <TextField source="reviews" />
-        <UrlField source="imageUrl" label="Avatar" />
         <TextField source='nameUserService'label='Professional'/>
         <EmailField source='emailUserService' label='Email Professional'/>
         <BooleanField source="enabledS" label='Active'/>
