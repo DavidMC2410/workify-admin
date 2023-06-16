@@ -1,6 +1,7 @@
 import React from 'react';
-import { List, Datagrid, TextField, EmailField, BooleanField, UrlField, DeleteButton, Filter, SearchInput } from 'react-admin';
+import { List, Datagrid, TextField, EmailField, BooleanField, UrlField, ImageField, Filter, SearchInput } from 'react-admin';
 import {UpdateButtonUser} from '../Atomic/ButtonEnableUser'
+
 
 const UsersFilter = (props)=>(<Filter {...props}>
   <SearchInput placeholder='Search user by email' source='email' resettable alwaysOn/>
